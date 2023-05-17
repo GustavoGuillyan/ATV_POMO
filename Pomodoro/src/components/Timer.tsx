@@ -23,12 +23,10 @@ function Timer({
 
   const calculateFraction = () => {
     const rawFraction = timeLeft / timeLimit
-    // the above value leaves a little extra at the end of the countdown
-    // this return value gradually reduces the leftover second to nothing
     return rawFraction - (1 / timeLimit) * (1 - rawFraction)
   }
 
-  // Update the dasharray value as time passes, starting with 283
+  
   const setDasharray = () => {
     if (timeLeft === 0) {
       return '283 283'
